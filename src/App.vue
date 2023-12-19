@@ -8,7 +8,7 @@ import TitlePage from './components/TitlePage.vue'
   </header>
 
   <main>
-    <TitlePage />
+    <router-view/>
   </main>
 </template>
 
