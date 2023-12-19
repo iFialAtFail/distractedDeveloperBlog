@@ -1,5 +1,5 @@
 <script setup>
-
+import BlogCard from './BlogCard.vue'
 </script>
 
 <template>
@@ -26,26 +26,13 @@
             </ul>
 
         </div>
-
+        <br>
         <div class="row">
 
             <div class="col-sm-8 blog-main">
-
-                <div class="blog-card">
-                    <h2 class="blog-post-title">Sample blog post</h2>
-                    <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
-
-                    <p class="blog-post-tease">This blog site will initially start off as a simple HTML w/ Bootstrap
-                        project and get spun up from there.</p>
-
-                </div><!-- /.blog-post -->
-
-                <div class="blog-post">
-                    <h2 class="blog-post-title">Another blog post</h2>
-                    <p class="blog-post-meta">December 23, 2013 by <a href="#">Jacob</a></p>
-                    <p class="blog-post-tease">This blog site will initially start off as a simple HTML w/ Bootstrap
-                        project and get spun up from there.</p>
-                </div><!-- /.blog-post -->
+                <BlogCard />
+                <br>
+                <BlogCard />
 
                 <nav>
                     <ul class="pager">
@@ -59,35 +46,32 @@
     </div><!-- /.container -->
 
     <footer class="blog-footer">
-        <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a
-                href="https://twitter.com/mdo">@mdo</a>.</p>
-        <p>
-            <a href="#">Back to top</a>
-        </p>
+        <a href="#">Back to top</a>
     </footer>
 </template>
 
 <style scoped>
 h1 {
-  font-weight: 500;
-  font-size: 2.6rem;
-  position: relative;
-  top: -10px;
+    font-weight: 500;
+    font-size: 2.6rem;
+    position: relative;
+    top: -10px;
 }
 
 h3 {
-  font-size: 1.2rem;
+    font-size: 1.2rem;
 }
 
 .greetings h1,
 .greetings h3 {
-  text-align: center;
+    text-align: center;
 }
 
 @media (min-width: 1024px) {
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
-  }
+
+    .greetings h1,
+    .greetings h3 {
+        text-align: left;
+    }
 }
 </style>
