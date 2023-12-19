@@ -1,7 +1,7 @@
 // router/index.js
 import { createRouter, createWebHistory } from 'vue-router'
 import TitlePage from '@/components/TitlePage.vue'
-import HelloWorld from '@/components/HelloWorld.vue'
+import BlogPage from '@/components/BlogPage.vue'
 
 const routes = [
     {
@@ -10,9 +10,9 @@ const routes = [
         component: TitlePage
     },
     {
-        path: '/helloWorld',
-        name: 'Hello',
-        component: HelloWorld
+        path: '/blogPage',
+        name: 'BlogPage',
+        component: BlogPage
     }
 ]
 
