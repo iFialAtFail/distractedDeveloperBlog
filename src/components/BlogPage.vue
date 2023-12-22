@@ -30,10 +30,10 @@ watchEffect(async () => {
   <div class="col-sm-8 blog-main">
 
     <div class="blog-post">
-      <h2 class="blog-post-title">{{ blogId }}</h2>
-      <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
+      <h2 class="blog-post-title">{{ blogData.blogTitle }}</h2>
+      <p class="blog-post-meta">{{ blogData.date }} by <a href="#">{{ blogData.author }}</a></p>
 
-      <p>This blog site will initially start off as a simple HTML w/ Bootstrap project and get spun up from there.</p>
+      <p>{{ blogData.blogContent }}</p>
       <hr>
       <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus
         mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere
