@@ -1,9 +1,28 @@
 <script setup>
-defineProps({
-  msg: {
+
+import { ref, watchEffect } from 'vue'
+import { getBlogData } from '../main.js'
+
+let props = defineProps({
+  blogId: {
     type: String,
-    required: false
+    required: true
   }
+})
+
+let blogData = ref('')
+
+watchEffect(async () => {
+  // this effect will run immediately and then
+  // re-run whenever one of the reactive depndencies change
+  // const url = `${API_URL}`
+  // const response = await (await fetch(url)).json()
+  // console.log(response)
+  // gridHeaders.value = response.headers
+  // gridData.value = response.body
+  // console.log(response.body)
+  blogData = getBlogData(props.blogId)
+
 })
 </script>
 
@@ -11,7 +30,7 @@ defineProps({
   <div class="col-sm-8 blog-main">
 
     <div class="blog-post">
-      <h2 class="blog-post-title">Sample blog post Yo!</h2>
+      <h2 class="blog-post-title">{{ blogId }}</h2>
       <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
 
       <p>This blog site will initially start off as a simple HTML w/ Bootstrap project and get spun up from there.</p>

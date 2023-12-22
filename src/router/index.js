@@ -6,13 +6,19 @@ import BlogPage from '@/components/BlogPage.vue'
 const routes = [
     {
         path: '/',
-        name: 'TitlePage',
+        name: 'Index',
         component: TitlePage
     },
     {
-        path: '/blogPage',
+        path: '/blog',
+        name: 'BlogMain',
+        component: TitlePage
+    },
+    {
+        path: '/blog/:blogId',
         name: 'BlogPage',
-        component: BlogPage
+        component: BlogPage,
+        props: true
     }
 ]
 
