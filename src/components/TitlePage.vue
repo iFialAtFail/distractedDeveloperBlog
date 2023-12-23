@@ -3,12 +3,6 @@ import BlogCard from './BlogCard.vue'
 </script>
 
 <template>
-    <div class="blog-masthead">
-        <div class="container">
-            <!--Put Title and background image here-->
-            <h1 class="title">iFialAtFail's Blog</h1>
-        </div>
-    </div>
     <div class="container">
 
         <div class="blog-summary">
@@ -58,20 +52,4 @@ h1 {
     top: -10px;
 }
 
-h3 {
-    font-size: 1.2rem;
-}
-
-.greetings h1,
-.greetings h3 {
-    text-align: center;
-}
-
-@media (min-width: 1024px) {
-
-    .greetings h1,
-    .greetings h3 {
-        text-align: left;
-    }
-}
 </style>
