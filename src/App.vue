@@ -3,40 +3,50 @@ import TitlePage from './components/TitlePage.vue'
 </script>
 
 <template>
-  <header>
-    <!-- Title and Image -->
-  </header>
+  <div class="container">
 
-  <main>
-    <router-view/>
-  </main>
+    <header class="titleContainer">
+      <!-- Title and Image -->
+      <div class="title">The Distracted Developer's Blog</div>
+      <img src="./assets/LakeShoreCropped.jpg">
+    </header>
+
+    <main>
+      <br>
+      <hr>
+      <br>
+      <router-view />
+    </main>
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
+.titleContainer {
+  container-type: normal;
+  container-name: titleContainerName;
+  position: relative;  /* Establish a positioning context for the title */
+  display: flex;  /* Enable flexbox layout for alignment */
+  justify-content: center;  /* Center the image and title horizontally */
+  align-items: center;  /* Center the image and title vertically */
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.title {
+  display: flex;
+  position: absolute;  /* Position the title independently within the container */
+  top: 75%;
+  justify-content: center;  /* Center the title within the image */
+  color: white;
+  text-shadow: 3px 3px 5px black;
+  font-size: 4cqw;
+  font-weight:500;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+header img {
+  object-fit: contain;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+
 </style>

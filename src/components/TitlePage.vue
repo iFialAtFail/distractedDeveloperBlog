@@ -1,14 +1,27 @@
 <script setup>
+import { ref, watchEffect } from 'vue';
 import BlogCard from './BlogCard.vue'
+import { getBlogCards } from '../data/testdata.js'
+
+let blogCards = ref([])
+
+watchEffect(async () => {
+    // this effect will run immediately and then
+    // re-run whenever one of the reactive depndencies change
+    // const url = `${API_URL}`
+    // const response = await (await fetch(url)).json()
+    // console.log(response)
+    // gridHeaders.value = response.headers
+    // gridData.value = response.body
+    // console.log(response.body)
+    blogCards = getBlogCards()
+
+})
+
+
 </script>
 
 <template>
-    <div class="blog-masthead">
-        <div class="container">
-            <!--Put Title and background image here-->
-            <h1 class="title">iFialAtFail's Blog</h1>
-        </div>
-    </div>
     <div class="container">
 
         <div class="blog-summary">
@@ -28,12 +41,11 @@ import BlogCard from './BlogCard.vue'
         </div>
         <br>
         <div class="row">
-
             <div class="col-sm-8 blog-main">
-                <BlogCard />
-                <br>
-                <BlogCard />
-
+                <div class="blogCards" v-for="blogCard in blogCards" :card="blogCard" >
+                    <BlogCard :card="blogCard"/>
+                    <br>
+                </div>
                 <nav>
                     <ul class="pager">
                         <li><a href="#">Previous</a></li>
@@ -56,22 +68,5 @@ h1 {
     font-size: 2.6rem;
     position: relative;
     top: -10px;
-}
-
-h3 {
-    font-size: 1.2rem;
-}
-
-.greetings h1,
-.greetings h3 {
-    text-align: center;
-}
-
-@media (min-width: 1024px) {
-
-    .greetings h1,
-    .greetings h3 {
-        text-align: left;
-    }
 }
 </style>
