@@ -7,11 +7,14 @@ import TitlePage from './components/TitlePage.vue'
 
     <header class="titleContainer">
       <!-- Title and Image -->
-      <h1 class="title">The Distracted Developer's Blog</h1>
+      <div class="title">The Distracted Developer's Blog</div>
       <img src="./assets/LakeShoreCropped.jpg">
     </header>
 
     <main>
+      <br>
+      <hr>
+      <br>
       <router-view />
     </main>
   </div>
@@ -19,11 +22,25 @@ import TitlePage from './components/TitlePage.vue'
 
 <style scoped>
 .titleContainer {
-  position: relative; /* Establish a positioning context for the title */
-  display: flex; /* Enable flexbox layout for alignment */
-  justify-content: center; /* Center the image and title horizontally */
-  align-items: center; /* Center the image and title vertically */
+  container-type: normal;
+  container-name: titleContainerName;
+  position: relative;  /* Establish a positioning context for the title */
+  display: flex;  /* Enable flexbox layout for alignment */
+  justify-content: center;  /* Center the image and title horizontally */
+  align-items: center;  /* Center the image and title vertically */
 }
+
+.title {
+  display: flex;
+  position: absolute;  /* Position the title independently within the container */
+  top: 75%;
+  justify-content: center;  /* Center the title within the image */
+  color: white;
+  text-shadow: 3px 3px 5px black;
+  font-size: 4cqw;
+  font-weight:500;
+}
+
 header img {
   object-fit: contain;
   max-width: 100%;
@@ -31,12 +48,5 @@ header img {
   margin-right: auto;
 }
 
-.titleContainer h1 {
-  position: absolute; /* Position the title independently within the container */
-  top: 80%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Center the title within the image */
-  color: white; /* Adjust text color as needed for readability */
-  text-shadow: 2px 2px 4px black; /* Optional: Add text shadow for better contrast */
-}
+
 </style>
