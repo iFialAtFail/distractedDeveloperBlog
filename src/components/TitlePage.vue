@@ -1,5 +1,24 @@
 <script setup>
+import { ref, watchEffect } from 'vue';
 import BlogCard from './BlogCard.vue'
+import { getBlogCards } from '../data/testdata.js'
+
+let blogCards = ref([])
+
+watchEffect(async () => {
+  // this effect will run immediately and then
+  // re-run whenever one of the reactive depndencies change
+  // const url = `${API_URL}`
+  // const response = await (await fetch(url)).json()
+  // console.log(response)
+  // gridHeaders.value = response.headers
+  // gridData.value = response.body
+  // console.log(response.body)
+  blogCards = getBlogCards()
+
+})
+
+
 </script>
 
 <template>
@@ -22,12 +41,11 @@ import BlogCard from './BlogCard.vue'
         </div>
         <br>
         <div class="row">
-
             <div class="col-sm-8 blog-main">
-                <BlogCard />
-                <br>
-                <BlogCard />
-
+                <div class="blogCards" v-for="blogCard in blogCards">
+                    <BlogCard />
+                    <br>
+                </div>
                 <nav>
                     <ul class="pager">
                         <li><a href="#">Previous</a></li>
