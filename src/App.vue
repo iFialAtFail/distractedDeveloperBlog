@@ -22,8 +22,8 @@ import TitlePage from './components/TitlePage.vue'
 
 <style scoped>
 .titleContainer {
-  container-type: normal;
-  container-name: titleContainerName;
+  container-type: inline-size;
+  container-name: container;
   position: relative;  /* Establish a positioning context for the title */
   display: flex;  /* Enable flexbox layout for alignment */
   justify-content: center;  /* Center the image and title horizontally */
@@ -40,6 +40,7 @@ import TitlePage from './components/TitlePage.vue'
   font-size: 4cqw;
   font-weight:500;
 }
+
 
 header img {
   object-fit: contain;
