@@ -2,7 +2,7 @@
 export function getBlogPostData(id) {
     return {
         id: id,
-        blogPostTitle: "My Blog Post Title From Main.js",
+        blogPostTitle: "My Blog Post Title For ID " + id,
         date: "January 1, 2014",
         author: "Mike Manley",
         blogContent: "Labore velit dolor nisi Lorem id eiusmod sint."
