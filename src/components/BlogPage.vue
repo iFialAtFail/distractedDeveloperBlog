@@ -33,7 +33,7 @@ watchEffect(async () => {
       <h2 class="blog-post-title">{{ blogData.blogPostTitle }}</h2>
       <p class="blog-post-meta">{{ blogData.date }} by <a href="#">{{ blogData.author }}</a></p>
 
-      <p>{{ blogData.blogContent }}</p>
+      <div v-html="blogData.blogContent"></div>
       
     </div><!-- /.blog-post -->
 
