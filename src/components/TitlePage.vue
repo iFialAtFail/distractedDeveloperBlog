@@ -6,15 +6,15 @@ import { getBlogCards } from '../data/testdata.js'
 let blogCards = ref([])
 
 watchEffect(async () => {
-  // this effect will run immediately and then
-  // re-run whenever one of the reactive depndencies change
-  // const url = `${API_URL}`
-  // const response = await (await fetch(url)).json()
-  // console.log(response)
-  // gridHeaders.value = response.headers
-  // gridData.value = response.body
-  // console.log(response.body)
-  blogCards = getBlogCards()
+    // this effect will run immediately and then
+    // re-run whenever one of the reactive depndencies change
+    // const url = `${API_URL}`
+    // const response = await (await fetch(url)).json()
+    // console.log(response)
+    // gridHeaders.value = response.headers
+    // gridData.value = response.body
+    // console.log(response.body)
+    blogCards = getBlogCards()
 
 })
 
@@ -42,8 +42,8 @@ watchEffect(async () => {
         <br>
         <div class="row">
             <div class="col-sm-8 blog-main">
-                <div class="blogCards" v-for="blogCard in blogCards">
-                    <BlogCard />
+                <div class="blogCards" v-for="blogCard in blogCards" :card="blogCard" >
+                    <BlogCard :card="blogCard"/>
                     <br>
                 </div>
                 <nav>
@@ -69,5 +69,4 @@ h1 {
     position: relative;
     top: -10px;
 }
-
 </style>
