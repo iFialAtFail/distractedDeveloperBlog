@@ -46,13 +46,6 @@ watchEffect(async () => {
                     <BlogCard :card="blogCard"/>
                     <br>
                 </div>
-                <nav>
-                    <ul class="pager">
-                        <li><a href="#">Previous</a></li>
-                        <li><a href="#">Next</a></li>
-                    </ul>
-                </nav>
-
             </div><!-- /.blog-main -->
         </div>
     </div><!-- /.container -->
