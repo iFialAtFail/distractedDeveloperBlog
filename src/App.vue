@@ -75,6 +75,10 @@ import TitlePage from './components/TitlePage.vue'
   font-weight: 500;
 }
 
+.titleLink {
+  color: white;
+}
+
 @media (max-width: 580px) {
   .title {
     font-size: 6.5cqw;
