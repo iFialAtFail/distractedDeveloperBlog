@@ -1,7 +1,7 @@
 <script setup>
 import { ref, watchEffect } from 'vue';
 import BlogCard from './BlogCard.vue'
-import { getBlogCards } from '../data/testdata.js'
+import { getBlogCards } from '../data/DataStore.js'
 
 let blogCards = ref([])
 

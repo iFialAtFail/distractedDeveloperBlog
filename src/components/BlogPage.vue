@@ -1,7 +1,7 @@
 <script setup>
 
 import { ref, watchEffect } from 'vue'
-import { getBlogPostData } from '../data/testdata.js'
+import { getBlogPost } from '../data/DataStore.js'
 
 let props = defineProps({
   blogId: {
@@ -21,7 +21,7 @@ watchEffect(async () => {
   // gridHeaders.value = response.headers
   // gridData.value = response.body
   // console.log(response.body)
-  blogData = getBlogPostData(props.blogId)
+  blogData = getBlogPost(props.blogId)
 
 })
 </script>
