@@ -2,8 +2,8 @@
 export function getBlogPostData(id) {
     return {
         id: id,
-        blogPostTitle: "My Blog Post Title For ID " + id,
-        date: "January 1, 2014",
+        title: "My Blog Post Title For ID " + id,
+        postDate: "January 1, 2014",
         author: "Mike Manley",
         blogContent: "Labore velit dolor nisi Lorem id eiusmod sint."
             + "<pre><code>Example code block</code></pre>"
@@ -22,8 +22,8 @@ export function getBlogCards() {
 function getBlogCard(numId) {
     return {
         id: numId,
-        postTitle: "Blog Post " + numId,
-        date: "January " + numId + ", 2023",
+        title: "Blog Post " + numId,
+        postDate: "January " + numId + ", 2023",
         author: "Mike Manley",
         summary: "Pariatur labore aliquip commodo velit non nisi anim Lorem proident ipsum in sint. Dolore eu ullamco reprehenderit minim. Velit tempor mollit reprehenderit elit eu ut laborum occaecat. Eu consequat consequat excepteur laborum. Qui cupidatat adipisicing quis laboris dolor..."
     }

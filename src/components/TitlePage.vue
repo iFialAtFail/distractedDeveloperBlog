@@ -3,19 +3,13 @@ import { ref, watchEffect } from 'vue';
 import BlogCard from './BlogCard.vue'
 import { getBlogCards } from '../data/DataStore.js'
 
-let blogCards = ref([])
+let summaries = ref([])
 
 watchEffect(async () => {
-    // this effect will run immediately and then
-    // re-run whenever one of the reactive depndencies change
-    // const url = `${API_URL}`
-    // const response = await (await fetch(url)).json()
-    // console.log(response)
-    // gridHeaders.value = response.headers
-    // gridData.value = response.body
-    // console.log(response.body)
-    blogCards = getBlogCards()
-
+    const url = import.meta.env.VITE_API_URI + import.meta.env.VITE_BLOG_ENDPOINT
+    console.log(url)
+    const response = await (await fetch(url)).json()
+    summaries.value = response.summaries
 })
 
 
@@ -42,8 +36,8 @@ watchEffect(async () => {
         <br>
         <div class="row">
             <div class="col-sm-8 blog-main">
-                <div class="blogCards" v-for="blogCard in blogCards" :card="blogCard" >
-                    <BlogCard :card="blogCard"/>
+                <div class="blogCards" v-for="summary in summaries" :card="summary">
+                    <BlogCard :card="summary" />
                     <br>
                 </div>
             </div><!-- /.blog-main -->

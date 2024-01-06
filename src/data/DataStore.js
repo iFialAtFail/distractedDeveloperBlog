@@ -1,9 +1,9 @@
 let blogPosts = {
-    "posts" : [
+    "summaries" : [
         {
             id: 1,
-            blogPostTitle: "My Blog Post Title For ID " + 1,
-            date: "January 1, 2014",
+            title: "My Blog Post Title For ID " + 1,
+            postDate: "January 1, 2014",
             author: "Mike Manley",
             blogContent: "Labore velit dolor nisi Lorem id eiusmod sint. Oasdfa"
                 + "<pre><code>Example code block</code></pre>"
@@ -11,8 +11,8 @@ let blogPosts = {
         },
         {
             id: 2,
-            blogPostTitle: "My Blog Post Title For ID " + 2,
-            date: "January 1, 2014",
+            title: "My Blog Post Title For ID " + 2,
+            postDate: "January 1, 2014",
             author: "Mike Manley",
             blogContent: "Labore velit dolor nisi Lorem id eiusmod sint.asdfadsf"
                 + "<pre><code>Example code block</code></pre>"
@@ -20,8 +20,8 @@ let blogPosts = {
         },
         {
             id: 3,
-            blogPostTitle: "My Blog Post Title For ID " + 3,
-            date: "January 1, 2014",
+            title: "My Blog Post Title For ID " + 3,
+            postDate: "January 1, 2014",
             author: "Mike Manley",
             blogContent: "Labore velit dolor nisi Lorem id eiusmod sint.qewrqewr"
                 + "<pre><code>Example code block</code></pre>"
@@ -29,8 +29,8 @@ let blogPosts = {
         },
         {
             id: 4,
-            blogPostTitle: "My Blog Post Title For ID " + 4,
-            date: "January 1, 2014",
+            title: "My Blog Post Title For ID " + 4,
+            postDate: "January 1, 2014",
             author: "Mike Manley",
             blogContent: "Labore velit dolor nisi Lorem id eiusmod sint. rtyurytu"
                 + "<pre><code>Example code block</code></pre>"
@@ -38,8 +38,8 @@ let blogPosts = {
         },
         {
             id: 5,
-            blogPostTitle: "My Blog Post Title For ID " + 5,
-            date: "January 1, 2014",
+            title: "My Blog Post Title For ID " + 5,
+            postDate: "January 1, 2014",
             author: "Mike Manley",
             blogContent: "Labore velit dolor nisi Lorem id eiusmod sint. bnmnbmbnm"
                 + "<pre><code>Example code block</code></pre>"
@@ -49,39 +49,39 @@ let blogPosts = {
 }
 
 let blogSummaries = {
-    "blogSummaries" : [
+    summaries : [
         {
             id: 1,
-            postTitle: "My Blog Post Title For ID " + 1,
-            date: "January 1, 2014",
+            title: "My Blog Post Title For ID " + 1,
+            postDate: "January 1, 2014",
             author: "Mike Manley",
             summary: "Labore velit dolor nisi Lorem id eiusmod sint..."
         },
         {
             id: 2,
-            postTitle: "My Blog Post Title For ID " + 2,
-            date: "January 1, 2014",
+            title: "My Blog Post Title For ID " + 2,
+            postDate: "January 1, 2014",
             author: "Mike Manley",
             summary: "Labore velit dolor nisi Lorem id eiusmod sint..."
         },
         {
             id: 3,
-            postTitle: "My Blog Post Title For ID " + 3,
-            date: "January 1, 2014",
+            title: "My Blog Post Title For ID " + 3,
+            postDate: "January 1, 2014",
             author: "Mike Manley",
             summary: "Labore velit dolor nisi Lorem id eiusmod sint...."
         },
         {
             id: 4,
-            postTitle: "My Blog Post Title For ID " + 4,
-            date: "January 1, 2014",
+            title: "My Blog Post Title For ID " + 4,
+            postDate: "January 1, 2014",
             author: "Mike Manley",
             summary: "Labore velit dolor nisi Lorem id eiusmod sint..."
         },
         {
             id: 5,
-            postTitle: "My Blog Post Title For ID " + 5,
-            date: "January 1, 2014",
+            title: "My Blog Post Title For ID " + 5,
+            postDate: "January 1, 2014",
             author: "Mike Manley",
             summary: "Labore velit dolor nisi Lorem id eiusmod sint..."
         }
@@ -93,5 +93,5 @@ export function getBlogPost(id) {
 }
 
 export function getBlogCards() {
-    return blogSummaries.blogSummaries
+    return blogSummaries["summaries"]
 }

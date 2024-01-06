@@ -30,10 +30,10 @@ watchEffect(async () => {
   <div class="col-sm-8 blog-main">
 
     <div class="blog-post">
-      <h2 class="blog-post-title">{{ blogData.blogPostTitle }}</h2>
-      <p class="blog-post-meta">{{ blogData.date }} by <a href="#">{{ blogData.author }}</a></p>
+      <h2 class="blog-post-title">{{ blogData.title }}</h2>
+      <p class="blog-post-meta">{{ blogData.postDate }} by <a href="#">{{ blogData.author }}</a></p>
 
-      <div v-html="blogData.blogContent"></div>
+      <div v-html="blogData.content"></div>
       
     </div><!-- /.blog-post -->
 
