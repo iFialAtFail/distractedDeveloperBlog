@@ -58,17 +58,23 @@ import TitlePage from './components/TitlePage.vue'
 .titleContainer {
   container-type: inline-size;
   container-name: container;
-  position: relative;  /* Establish a positioning context for the title */
-  display: flex;  /* Enable flexbox layout for alignment */
-  justify-content: center;  /* Center the image and title horizontally */
-  align-items: center;  /* Center the image and title vertically */
+  position: relative;
+  /* Establish a positioning context for the title */
+  display: flex;
+  /* Enable flexbox layout for alignment */
+  justify-content: center;
+  /* Center the image and title horizontally */
+  align-items: center;
+  /* Center the image and title vertically */
 }
 
 .title {
   display: flex;
-  position: absolute;  /* Position the title independently within the container */
+  position: absolute;
+  /* Position the title independently within the container */
   top: 75%;
-  justify-content: center;  /* Center the title within the image */
+  justify-content: center;
+  /* Center the title within the image */
   color: white;
   text-shadow: 3px 3px 5px black;
   font-size: 6cqw;
@@ -102,10 +108,25 @@ header img {
 @media (hover:hover) {
   .wavy:hover span {
     display: inline-block;
+    background-color: hsla(160, 0%, 37%, 0.0);
     animation: animate 2s ease-in-out infinite;
     animation-delay: calc(0.05s * var(--i));
   }
+
+  a:hover {
+    background-color: hsla(160, 0%, 37%, 0.0);
+  }
+
+  .title:hover {
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 4px transparent;
+    color: #000; 
+  }
+
 }
+
 
 @keyframes animate {
   0% {
