@@ -1,7 +1,7 @@
 <script setup>
 
-import { ref, watchEffect } from 'vue'
-import { getBlogPost } from '../data/DataStore.js'
+import { useBlogStore } from '../data/BlogStore.js'
+import { storeToRefs } from 'pinia'
 
 let props = defineProps({
   blogId: {
@@ -10,33 +10,23 @@ let props = defineProps({
   }
 })
 
-let blogData = ref('')
+const blogStore = useBlogStore()
+const { blog, error } = storeToRefs(blogStore)
+blogStore.fetchBlogById(props.blogId)
 
-watchEffect(async () => {
-  // this effect will run immediately and then
-  // re-run whenever one of the reactive depndencies change
-  // const url = `${API_URL}`
-  // const response = await (await fetch(url)).json()
-  // console.log(response)
-  // gridHeaders.value = response.headers
-  // gridData.value = response.body
-  // console.log(response.body)
-  blogData = getBlogPost(props.blogId)
-
-})
 </script>
 
 <template>
   <div class="col-sm-8 blog-main">
-
-    <div class="blog-post">
-      <h2 class="blog-post-title">{{ blogData.title }}</h2>
-      <p class="blog-post-meta">{{ blogData.postDate }} by <a href="#">{{ blogData.author }}</a></p>
-
-      <div v-html="blogData.content"></div>
-      
-    </div><!-- /.blog-post -->
-
+    <div v-if="error">Error: {{ error }}</div>
+    <div v-else>
+      <div v-if="blog" class="blog-post">
+        <h2 class="blog-post-title">{{ blog.title }}</h2>
+        <p class="blog-post-meta">{{ blog.postDate }} by <a href="#">{{ blog.author }}</a></p>
+        <div v-html="blog.content"></div>
+      </div><!-- /.blog-post -->
+      <div v-else>Loading...</div>
+    </div>
     <nav>
       <ul class="pager">
         <li><a href="#">Previous</a></li>
