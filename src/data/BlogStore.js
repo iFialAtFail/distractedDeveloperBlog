@@ -17,8 +17,8 @@ export const useBlogStore = defineStore('blog', () => {
             const response = await fetch(url)
             const body = await response.json()
             blogs.value = body.blogs
-        } catch (error) {
-            error.value = error
+        } catch (err) {
+            error.value = err
         } finally {
             isLoading.value = false
         }

@@ -32,8 +32,8 @@ blogStore.fetchBlogs()
         <br>
         <div class="row">
             <div class="col-sm-8 blog-main">
-                <div v-if="isLoading">Loading blog posts...</div>
-                <div v-else-if="error">Error: {{ error }}</div>
+                <div v-if="error">Error: {{ error }}</div>
+                <div v-else-if="isLoading">Loading blog posts...</div>
                 <div v-else>
                     <div class="blogCards" v-for="summary in blogs" :card="summary">
                         <BlogCard :card="summary" />
@@ -44,9 +44,7 @@ blogStore.fetchBlogs()
         </div><!--End Row-->
     </div><!-- /.container -->
 
-    <footer class="blog-footer">
-        <a href="#">Back to top</a>
-    </footer>
+    
 </template>
 
 <style scoped>
