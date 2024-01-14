@@ -45,12 +45,23 @@ import TitlePage from './components/TitlePage.vue'
       <img src="./assets/LakeShoreCropped.jpg">
     </header>
 
-    <main>
+    <main class="container-content">
       <br>
       <hr>
       <br>
       <router-view />
     </main>
+    <footer class="blog-footer">
+
+
+      <a href="#" aria-label="Back To Top">
+        <svg width="32" height="32" viewBox="0 0 100 100">
+          <polygon points="50,1 95,25 95,75 50,99 5,75 5,25" fill="white" />
+          <polyline points="20,50 50,25 80,50" fill="none" stroke="black" stroke-width="10" />
+          <polyline points="20,70 50,45 80,70" fill="none" stroke="black" stroke-width="10" />
+        </svg>
+      </a>
+    </footer>
   </div>
 </template>
 
@@ -83,6 +94,13 @@ import TitlePage from './components/TitlePage.vue'
 
 .titleLink {
   color: white;
+}
+
+.blog-footer {
+  position: fixed;
+  bottom: 1.8rem;
+  right: 1.8rem;
+  z-index: 100;
 }
 
 @media (max-width: 580px) {
@@ -122,7 +140,7 @@ header img {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-stroke: 4px transparent;
-    color: #000; 
+    color: #000;
   }
 
 }

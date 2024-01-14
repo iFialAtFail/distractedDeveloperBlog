@@ -1,16 +1,12 @@
 <script setup>
-import { ref, watchEffect } from 'vue';
+
 import BlogCard from './BlogCard.vue'
-import { getBlogCards } from '../data/DataStore.js'
+import { useBlogStore } from '../data/BlogStore.js'
+import { storeToRefs } from 'pinia'
 
-let summaries = ref([])
-
-watchEffect(async () => {
-    const url = import.meta.env.VITE_API_URI + import.meta.env.VITE_BLOG_ENDPOINT
-    console.log(url)
-    const response = await (await fetch(url)).json()
-    summaries.value = response.summaries
-})
+const blogStore = useBlogStore()
+const { blogs, isLoading, error } = storeToRefs(blogStore)
+blogStore.fetchBlogs()
 
 
 </script>
@@ -36,17 +32,19 @@ watchEffect(async () => {
         <br>
         <div class="row">
             <div class="col-sm-8 blog-main">
-                <div class="blogCards" v-for="summary in summaries" :card="summary">
-                    <BlogCard :card="summary" />
-                    <br>
-                </div>
+                <div v-if="error">Error: {{ error }}</div>
+                <div v-else-if="isLoading">Loading blog posts...</div>
+                <div v-else>
+                    <div class="blogCards" v-for="summary in blogs" :card="summary">
+                        <BlogCard :card="summary" />
+                        <br>
+                    </div>
+                </div><!--End vElse-->
             </div><!-- /.blog-main -->
-        </div>
+        </div><!--End Row-->
     </div><!-- /.container -->
 
-    <footer class="blog-footer">
-        <a href="#">Back to top</a>
-    </footer>
+    
 </template>
 
 <style scoped>
